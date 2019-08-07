@@ -5,9 +5,18 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 
-/* *, *:before, *:after {box-sizing: inherit} */
-
-.visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
 /* COLOURS
 White: #ffffff rgb(255, 255, 255)
@@ -26,6 +35,7 @@ body {
     color: #fff;  
     font-family: 'Roboto', sans-serif;
     font-weight: 300; 
+    font-size: 20px;
 }
 
 .wrapper {
@@ -68,7 +78,7 @@ h1 {
 }
 
 h2 {
-    font-size: 54px;
+    font-size: 54px; 
 }
 
 h3 {
@@ -76,7 +86,6 @@ h3 {
 }
 
 p {
-    font-size: 20px;
     line-height: 29px;
     letter-spacing: 0.2px; 
 }
@@ -100,9 +109,18 @@ a {
     color: #fff; 
     border: 1px dotted transparent; 
     padding: 10px 20px; 
+    /* margin: 20px 0;   */
     font-size: 25px;
     line-height: 29px; 
     text-align: center;
+}
+
+.email {
+    border: 1px dotted transparent; 
+    padding: 10px 20px; 
+    /* margin: 20px 0;   */
+    font-size: 25px;
+    line-height: 29px; 
 }
 
 a:hover, 
@@ -161,8 +179,12 @@ header {
 }
 
 .info-container { 
-    width: calc(100% - 300px);
+    width: 75%;
     padding-left: 50px; 
+}
+
+.image-container {
+    width: 25%; 
 }
 
 /* GALLERY SECTION */
@@ -178,12 +200,12 @@ header {
 
 .gallery li {
     float: left; 
-    width: calc((100% / 3) - 20px);
+    width: 30%;
 }
 
 .gallery li:nth-child(2) {
-    margin-left: 20px; 
-    margin-right: 20px; 
+    margin-left: 5%; 
+    margin-right: 5%; 
 }
 
 /* CONTACT SECTION */
@@ -202,8 +224,9 @@ header {
 .contact span {
     font-family: 'Petit Formal Script', cursive;
     display: block; 
-    line-height: 100px; 
+    line-height: 50px; 
     font-size: 40px; 
+    margin-bottom: 20px; 
 }
 
 /* BLOG SECTION */
@@ -258,11 +281,6 @@ footer p {
     text-align: right;
 }
 
-.contact-info h3 {
-    margin-top: 15px;
-    margin-bottom: 0px; 
-}
-
 .contact-info ul {
     margin: 0; 
 }
@@ -278,6 +296,7 @@ form .email {
     width: calc(100% - 150px);
     padding: 10px;
     float: left; 
+    text-align: center; 
 }
 
 form .button {
@@ -299,6 +318,9 @@ form .button {
 
 /* MEDIA QUERIES */
 @media (max-width: 500px) {
+    body {
+        font-size: 16px; 
+    }
     .wrapper {
         width: 100%; 
         margin: 0 auto; 
@@ -329,13 +351,17 @@ form .button {
         padding: 0; 
         width: 100%;
     }
-    h2 {
+
+    h2, 
+    h3 {
         text-align: center; 
-        font-size: 35px;
+        font-size: 25px;
+        margin-bottom: 20px; 
     }
 
     .button {
         width: 200px; 
+        margin: 5px 0 20px 0; 
         display: block;
         margin-left:auto;
         margin-right:auto;
@@ -344,7 +370,6 @@ form .button {
     /* HEADER SECTION */
 
     header {
-        height: 85vh; 
         background-position: 90% 90%;
         background-size: 100%; 
     }
@@ -384,12 +409,12 @@ form .button {
 
     li.photo1, 
     li.photo3 {
-        width: calc((100% / 2) - 10px); 
-        margin-left: 10px; 
+        width: 48%; 
     }
 
     li.photo1 {
         float: right; 
+        margin-left: 4%;
     }
 
     li.photo2 {
@@ -408,25 +433,25 @@ form .button {
     
     .contact li {
         float: none; 
-        width: 100%;
-        text-align: center; 
+        width: 100%; 
         font-size: 60px; 
+    }
+
+    .contact span {
+        font-size: 30px; 
     }
     
     /* BLOG SECTION */
 
-    article img, 
-    .article-info {
+    .article-1-image, 
+    .article-2-info,    
+    .article-1-info, 
+    .article-2-image {
         float: none; 
         width: 100%; 
+        /* padding: 0;  */
     }
-
-    .article-info {
-        padding: 0px; 
-    }
-
-    /* FOOTER STYLES */
-
+    
     footer ul {
         font-size: 20px; 
         line-height: 29px;   
@@ -464,11 +489,15 @@ form .button {
         padding: 30px 0; 
     }
 
+    .subscribe-info p {
+        display: none;  
+    }
+
     form .email {
         width: 90%;
         padding: 10px;
         margin: 0 0 20px 0; 
-        float:none;  
+        float: none; 
     }
 
     form .button {
